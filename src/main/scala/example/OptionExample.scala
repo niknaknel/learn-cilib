@@ -3,7 +3,7 @@ package example
 object OptionExample extends App {
 
   /**
-   * Imaging we wanted to access the head element of a list.
+   * Imagine we wanted to access the head element of a list.
    * The method below is unsafe as it might throw an exception.
    * Alternatively, we could use a default value.
    * Ether approach requires that the developer calling this function to handle the
