@@ -49,22 +49,20 @@ object OptionExample extends App {
   println(toInt('A').map(x => x * 2))
   println()
 
-
   /**
    * What if we want to use multiple Options?
    * We can use map on both Options, but this will give us a result type of Option[Option[A]].
    * However this is not that useful.
    */
-  val multipleOptions =
+  val nestedOptions =
     toInt('5').map(x =>
       helmet(List(1, 2, 3)).map(y =>
         x + y
       )
     )
-  println("Mapping over an multiple options")
-  println(multipleOptions)
+  println("Nested options")
+  println(nestedOptions)
   println()
-
 
   /**
    * To overcome this, we use flatMap.
@@ -77,7 +75,6 @@ object OptionExample extends App {
   println("Using flatMap")
   println(flatMapExample)
   println()
-
 
   /**
    * However, if the number of options increases, writing nested flatMaps becomes ugly quickly.
