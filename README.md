@@ -8,3 +8,6 @@ If you find these examples useful or have any questions please message me on [sp
 2. Download [InteliJ](https://www.jetbrains.com/)
 3. Install the sbt and scala plugins for InteliJ
 4. Import learn-cilib as a project
+
+### CIlib Tutorial
+You can find the cilib tutorial book [here](https://github.com/ciren/cilib-tutorial/releases).
