@@ -20,8 +20,9 @@ import spire.math.Interval
 object Main extends SafeApp {
 
   // General config
-  val iterations = 100
-  val independentRuns = (for (x <- 1 to 10) yield x).toList
+  val iterations = 1000
+  val independentRuns = 5
+  val cores = 8
   val outputFile = "results.csv"
   val numberOfParticles: Int Refined Positive = 20
   val bounds = Interval(-5.12, 5.12) ^ 30 // The bounds of our search space(s)
@@ -40,7 +41,7 @@ object Main extends SafeApp {
     ("Ackley", Benchmarks.ackley[NonEmptyList, Double] _),
   )
 
-  val simulations = independentRuns.flatMap { run =>
+  val simulations = (for (x <- 1 to independentRuns) yield x).toList.flatMap { run =>
     benchmarks.map { case (name, benchmark) =>
       val eval = Eval.unconstrained(benchmark).eval
       val cmp = Comparison.dominance(Min)
@@ -55,7 +56,7 @@ object Main extends SafeApp {
 
   def executeAndSaveResults: Process[Task, Unit] =
     merge
-      .mergeN(8)(measured)
+      .mergeN(cores)(measured)
       .to(ProjectIO.csvSink(outputFile, PerformanceMeasures.toCSVLine))
 
   val benchmarkNames = benchmarks.map(_._1.value).mkString(", ")
@@ -63,13 +64,14 @@ object Main extends SafeApp {
   override val runc: IO[Unit] =
     for {
       _ <- putStrLn("--> Description")
-      _ <- putStrLn(s"\tNumber of Independent Runs: ${independentRuns.size}")
+      _ <- putStrLn(s"\tNumber of Independent Runs: ${independentRuns}")
       _ <- putStrLn(s"\tBenchmarks: ${benchmarkNames}")
       _ <- putStrLn(s"\tBounds: ${bounds.head}")
       _ <- putStrLn(s"\tAlgorithm: ${algorithmName.value}")
       _ <- putStrLn(s"\tSwarm Size: ${numberOfParticles.value}")
       _ <- putStrLn(s"\tIterations: ${iterations}")
       _ <- putStrLn(s"\tOutput File: ${outputFile}")
+      _ <- putStrLn(s"\tCores: ${cores}")
       _ <- putStrLn("--> Executing")
       start <- IO(System.currentTimeMillis())
       _ <- IO(executeAndSaveResults.run.unsafePerformSync)
