@@ -1,4 +1,6 @@
 *.class
 *.log
+*.csv
+
 target
 .idea

@@ -7,8 +7,9 @@ ThisBuild / organizationName := "example"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "learn-cilib",
-    libraryDependencies += cilibCore,
-    libraryDependencies += cilibExec,
-    libraryDependencies += cilibPSO
+      name := "learn-cilib",
+      libraryDependencies += cilibCore,
+      libraryDependencies += cilibExec,
+      libraryDependencies += cilibPSO,
+      libraryDependencies += benchmarks
   )
