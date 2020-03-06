@@ -76,7 +76,7 @@ object Main extends SafeApp {
       start <- IO(System.currentTimeMillis())
       _ <- IO(executeAndSaveResults.run.unsafePerformSync)
       finish <- IO(System.currentTimeMillis())
-      _ <- putStrLn("--> Complete.")
+      _ <- putStrLn("--> Complete")
       _ <- putStrLn(s"\tDuration: ${Utilities.seconds(finish - start)}s")
     } yield ()
 
