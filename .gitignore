@@ -1,6 +1,10 @@
 *.class
 *.log
 *.csv
+project/metals.sbt
 
 target
+.idea
+.metals
+.bloop
 .idea
