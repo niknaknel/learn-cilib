@@ -6,11 +6,14 @@ import cilib.exec.{Measurement, Output}
 import scalaz.Scalaz._
 import scalaz._
 
-final case class Results(min: Double, max: Double, average: Double) extends Output
+final case class Results(min: Double, max: Double, average: Double, bestPos: NonEmptyList[Int]) extends Output
 
 object Results {
 
-  def toCSVLine(measurement: Measurement[Results]): String =
+  def toCSVLine(measurement: Measurement[Results]): String = {
+    val gbPos = measurement.data.bestPos.toList.mkString(" ")
+//    println(s"\tGlobal Best: $gbPos")
+
     List(
       measurement.alg,
       measurement.prob,
@@ -20,6 +23,7 @@ object Results {
       measurement.data.max.toString,
       measurement.data.average.toString
     ).mkString(",")
+  }
 
 }
 
@@ -44,13 +48,21 @@ object PerformanceMeasures {
     sum / fitnessValues.length.toDouble
   }
 
+  private def selectGlobalBest(swarm: NonEmptyList[SetParticle]) =
+    swarm.toList
+      .map(x => x.state.best)
+      .reduceLeftOption((a, c) => Comparison.compare(a, c).apply(Comparison.dominance(Min)))
+      .getOrElse(sys.error("Impossible"))
+
   def swarmPerformance =
     measure[NonEmptyList, SetParticle, Results](swarm => {
       val fitnessValues = swarm.map(x => PerformanceMeasures.fitness(x, Double.PositiveInfinity))
       val min = PerformanceMeasures.minimum(fitnessValues)
       val max = PerformanceMeasures.maximum(fitnessValues)
       val average = PerformanceMeasures.average(fitnessValues)
-      Results(min, max, average)
+      val gb = selectGlobalBest(swarm).pos
+
+      Results(min, max, average, gb)
     })
 
 }

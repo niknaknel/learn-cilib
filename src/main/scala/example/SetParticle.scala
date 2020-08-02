@@ -31,7 +31,7 @@ object SetParticle {
   private def createParticle(U: NonEmptyList[Int]): RVar[SetParticle] =
     for {
       shuffeld <- RVar.shuffle(U)
-      n <- Dist.uniformInt(Interval(1, U.size))
+      n <- Dist.uniformInt(Interval(1, U.size)) // poisson?
       set = shuffeld.toList.take(n).toNel.getOrElse(sys.error("Impossible -> n >= 1"))
       position = Position(set, Interval(1.0, U.size.toDouble) ^ 30)
     } yield Entity(SetMem(position), position)

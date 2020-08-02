@@ -1,0 +1,135 @@
+--> Description
+	Number of Independent Runs: 5
+	Benchmark: data/plane_3x+2.csv
+	U: Set(0, 5, 10, 56, 42, 24, 37, 25, 52, 14, 20, 46, 57, 29, 1, 6, 28, 38, 21, 33, 9, 53, 13, 41, 2, 32, 34, 45, 17, 22, 44, 59, 27, 12, 54, 49, 7, 39, 3, 35, 48, 18, 50, 16, 31, 11, 43, 40, 26, 55, 23, 8, 58, 36, 30, 51, 19, 4, 47, 15)
+	Algorithm: Set PSO
+	Swarm Size: 20
+	Iterations: 100
+	Output File: results.csv
+	Cores: 8
+--> Executing
+Jul 28, 2020 10:39:39 PM com.github.fommil.netlib.BLAS <clinit>
+WARNING: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+Jul 28, 2020 10:39:40 PM com.github.fommil.netlib.BLAS <clinit>
+WARNING: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+Jul 28, 2020 10:39:40 PM com.github.fommil.netlib.LAPACK <clinit>
+WARNING: Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+Jul 28, 2020 10:39:40 PM com.github.fommil.netlib.LAPACK <clinit>
+WARNING: Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+	Global Best: 56 42 28 53 32 45 59 54 7 31 11 58 4 15
+	Global Best: 10 56 45 22 59 54 48 18 16 31 15
+	Global Best: 10 56 45 22 59 54 48 18 16 31 15
+	Global Best: 10 56 45 22 59 54 48 18 16 31 15
+	Global Best: 46 45 59 54 31 11 58
+	Global Best: 2 45 59 54 48 16 31
+	Global Best: 2 45 59 54 48 16 31
+	Global Best: 2 45 59 54 48 16 31
+	Global Best: 2 45 59 54 48 16 31
+	Global Best: 2 45 59 54 48 16 31
+	Global Best: 2 45 59 54 48 16 31
+	Global Best: 0 56 29 2 59 48 16
+	Global Best: 0 56 29 2 59 48 16
+	Global Best: 29 28 2 48 16
+	Global Best: 29 28 2 48 16
+	Global Best: 29 28 2 48 16
+	Global Best: 29 28 2 48 16
+	Global Best: 29 28 2 48 16
+	Global Best: 29 28 2 48 16
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 2
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 4
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 19
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+	Global Best: 32
+--> Complete
+	Duration: 262.73s
+w = (4.960101494965797E-16, 1.570463951442027E-16, 1.699833260275925E-17)
+b = 0.02423277610749333
+0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0
+1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+-----------------------------------
+        Confusion Matrix:
+-----------------------------------
+                      Actual
+                     1       0
+               --------------------
+Predicted    1|      24      36
+             0|       0       0
+
+Process finished with exit code 0
+
